@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration System</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Student Registration System</h1>
+      <p>Register new students and manage their records</p>
+    </header>
+
+    <nav>
+      <a href="#register">Register Student</a>
+      <a href="#records">View Records</a>
+    </nav>
+
+    <div class="container" id="register">
+      <h2>Register Student</h2>
+      <form id="studentForm">
+        <input
+          type="text"
+          id="studentName"
+          placeholder="Student Name"
+          required
+          oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '');"
+        />
+        <input type="text" id="studentID" placeholder="Student ID" required />
+        <input type="email" id="email" placeholder="Email ID" required />
+        <input
+          type="tel"
+          id="contact"
+          placeholder="Contact Number"
+          required
+          oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);"
+        />
+        <button type="submit" id="submitBtn">Register</button>
+      </form>
+    </div>
+
+    <div class="container" id="records">
+      <h2>Registered Student Records</h2>
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Student ID</th>
+            <th>Email ID</th>
+            <th>Contact No.</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Link JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
